@@ -1,0 +1,16 @@
+---
+  - name: Ensure correct package is installed and updated
+    apt: name=openssh-server update-cache=yes cache_valid_time=3600 force=yes
+
+  - name: Secure openssh
+    template: src=sshd_config.j2 dest=/etc/ssh/sshd_config
+    register: ssh_config_update
+
+  - name: Test SSH for safety
+    command: sshd -t
+    when: ssh_config_update|changed
+    register: ssh_config_safe
+
+  - name: Restart openssh-server
+    service: name=ssh state=reloaded
+    when: ssh_config_safe|success and ssh_config_update|changed

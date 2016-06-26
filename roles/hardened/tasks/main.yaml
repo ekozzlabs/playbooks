@@ -1,0 +1,6 @@
+---
+  - name: Install ossec repo
+    apt_repository: repo='deb http://ossec.wazuh.com/repos/apt/ubuntu precise main' state=present
+
+  - name: Install ossec
+    apt: name=ossec-hids update-cache=yes cache_valid_time=3600 force=yes

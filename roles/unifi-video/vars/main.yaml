@@ -1,0 +1,39 @@
+---
+
+apt_packages:
+  - { name: ca-certificates-java }
+  - { name: fontconfig-config }
+  - { name: fonts-dejavu-core }
+  - { name: libasyncns0 }
+  - { name: libavahi-client3 }
+  - { name: libavahi-common3 }
+  - { name: libboost-filesystem1.54.0 }
+  - { name: libboost-program-options1.54.0 }
+  - { name: libboost-system1.54.0 }
+  - { name: libboost-thread1.54.0 }
+  - { name: libcommons-daemon-java }
+  - { name: libcups2 }
+  - { name: libflac8 }
+  - { name: libfontconfig1 }
+  - { name: libgoogle-perftools4 }
+  - { name: libjpeg-turbo8 }
+  - { name: liblcms2-2}
+  - { name: libnspr4 }
+  - { name: libnss3 }
+  - { name: libnss3-nssdb }
+  - { name: libogg0 }
+  - { name: libpcrecpp0 }
+  - { name: libpulse0 }
+  - { name: libsctp1 }
+  - { name: libsnappy1 }
+  - { name: libsndfile1 }
+  - { name: libtcmalloc-minimal4 }
+  - { name: libunwind8 }
+  - { name: libv8-3.14.5 }
+  - { name: libvorbis0a }
+  - { name: libvorbisenc2 }
+  - { name: lksctp-tools }
+  - { name: mongodb-clients }
+  - { name: mongodb-server }
+  - { name: openjdk-7-jre-headless }
+  - { name: tzdata-java }

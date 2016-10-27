@@ -1,0 +1,22 @@
+---
+apt_packages:
+  - { name: ntp }
+  - { name: nano }
+  - { name: dosbox }
+  - { name: xscreensaver-data-extra }
+  - { name: xscreensaver-gl-extra }
+  - { name: git }
+  - { name: gimp }
+  - { name: doomsday }
+  - { name: redshift }
+  - { name: exiftool }
+  - { name: nmap }
+  - { name: traceroute }
+
+remove_apt_packages:
+  - { name: empthay }
+  - { name: pidgin }
+  - { name: thunderbird }
+
+deb_downloads:
+  - { source_url: 'URL' }

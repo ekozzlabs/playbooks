@@ -1,0 +1,12 @@
+---
+# Config location: /usr/lib/unifi-video/
+# keystore: /usr/lib/unifi-video/data/keystore
+# Put a reverse proxy in front, don't bother with the cert
+
+- hosts: bullrun
+  user: matt
+  become: yes
+  become_user: root
+  roles:
+    - ssh
+    - reverseproxy

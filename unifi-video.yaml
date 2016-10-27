@@ -1,0 +1,10 @@
+---
+
+- hosts: fortlewis
+  user: matt
+  become: yes
+  become_user: root
+  roles:
+    - ssh
+    - unifi-video
+    - hardened

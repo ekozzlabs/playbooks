@@ -1,0 +1,39 @@
+---
+#- name: add repos
+#  apt_repository: repo={{ item.source_path }}
+#  with_items: add_repos
+#  become: yes
+#  become_user: root
+#  tags: full
+
+#- name: add apt key
+#  apt_key: url={{ item.key_path }} state=present
+#  become: yes
+#  become_user: root
+#  with_items: add_repos
+
+- name: Install packages
+  apt: name={{ item.name }} update-cache=yes cache_valid_time=3600 force=yes
+  with_items: apt_packages
+  become: yes
+  become_user: root
+  tags: full
+
+# need to check if atom is intalled first before running this
+# as it can take a while to run
+
+#- apt: deb=https://atom.io/download/deb/
+
+- apt: deb=https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+
+
+- name: Remove packages
+  apt: name={{ item.name }} update-cache=yes cache_valid_time=3600 force=yes state=absent
+  with_items: remove_apt_packages
+  become: yes
+  become_user: root
+  tags: full
+
+# Prox-pn installation and configuration
+
+# Configure Dosbox would be nice, CM?

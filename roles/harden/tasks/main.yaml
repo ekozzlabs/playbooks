@@ -1,4 +1,5 @@
 ---
+#Need to install the key and libmysqlclient18
   - name: Install ossec repo
     apt_repository: repo='deb http://ossec.wazuh.com/repos/apt/ubuntu precise main' state=present
 

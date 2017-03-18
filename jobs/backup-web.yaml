@@ -1,0 +1,22 @@
+---
+# Config location: /usr/lib/unifi-video/
+# keystore: /usr/lib/unifi-video/data/keystore
+# Put a reverse proxy in front, don't bother with the cert
+
+- hosts: tc-net
+
+  tasks:
+    - name: Today's date
+      debug: var=ansible_date_time.date
+
+    - name: Backing up web
+      command: tar -czvf ~/tc-{{ ansible_date_time.date}}.tar.gz ~/public_html/
+      tags: create
+
+    - name: Pull backup to local machine
+      fetch: src=~/tc-{{ ansible_date_time.date}}.tar.gz dest=~/
+      tags: get
+
+    - name: Remove remote backup file
+      file: path=/backups/tc-{{ ansible_date_time.date}}.tar.gz state=absent
+      tags: remove
